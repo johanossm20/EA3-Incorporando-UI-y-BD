@@ -1,0 +1,23 @@
+EA3 - Incorporando UI y BD (Programacion Orientada a Objetos II)
+
+Contenido del ZIP
+- EA3_Incorporando_UI_y_BD_GrupoX_ApellidoNombre.pdf : informe en APA 7
+- codigo_fuente.csv : codigo de ConexionTester numerado por lineas (separador ;)
+- ConexionTester.java : codigo fuente
+
+Requisitos
+- JDK 11 o superior (se probo con Java 21)
+- Driver sqlite-jdbc (un solo .jar, version 3.46.1.3):
+  https://github.com/xerial/sqlite-jdbc/releases
+
+Compilar y ejecutar (Windows, desde la carpeta del proyecto)
+  javac ConexionTester.java
+  java -cp ".;sqlite-jdbc-3.46.1.3.jar" ConexionTester
+
+En Linux o macOS, cambiar ";" por ":" en el classpath.
+
+Pruebas sugeridas
+1. URL por defecto (jdbc:sqlite:inventario.db) -> mensaje verde
+2. jdbc:sqlite:/ruta/inexistente/inventario.db -> mensaje rojo (SQLException)
+3. jdbc:mysql://localhost:3306/inventario -> mensaje rojo (driver no encontrado)
+4. URL vacia -> aviso en rojo
